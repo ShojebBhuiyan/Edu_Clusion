@@ -1,3 +1,9 @@
+import HeroSection from "@/components/landing/hero-section";
+
 export default function Home() {
-  return <main className="container min-h-screen max-w-screen"></main>;
+  return (
+    <main className="min-h-screen max-w-screen">
+      <HeroSection />
+    </main>
+  );
 }
