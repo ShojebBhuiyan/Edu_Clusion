@@ -1,7 +1,9 @@
 "use client";
 
 import { useState, useEffect, ChangeEvent } from "react";
+// @ts-ignore
 import * as braille from "braille";
+// @ts-ignore
 import * as pdfjsLib from "pdfjs-dist/webpack";
 import { PDFDocumentProxy, PDFPageProxy } from "pdfjs-dist";
 import { saveAs } from "file-saver";
