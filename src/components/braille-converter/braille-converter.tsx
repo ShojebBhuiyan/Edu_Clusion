@@ -1,10 +1,12 @@
 "use client";
 
 import { useState, useEffect, ChangeEvent } from "react";
+// @ts-ignore
 import * as braille from "braille";
+// @ts-ignore
 import * as pdfjsLib from "pdfjs-dist/webpack";
 import { PDFDocumentProxy, PDFPageProxy } from "pdfjs-dist";
-import { saveAs } from "file-saver";
+import { downloadBraille } from "@/lib/braille";
 
 export default function BrailleConverter() {
   const [text, setText] = useState<string>("");
@@ -61,11 +63,6 @@ export default function BrailleConverter() {
     return textContent.join("\n");
   };
 
-  const downloadBraille = () => {
-    const blob = new Blob([brailleText], { type: "text/plain;charset=utf-8" });
-    saveAs(blob, "braille.brf");
-  };
-
   return (
     <div className="max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg">
       <h1 className="text-6xl font-bold mb-4 text-center text-black">
@@ -91,7 +88,7 @@ export default function BrailleConverter() {
           {brailleText}
         </p>
         <button
-          onClick={downloadBraille}
+          onClick={() => downloadBraille(brailleText)}
           className="mt-20 px-4 py-2 bg-gray-500 text-white rounded hover:bg-blue-700"
         >
           Download Braille Output
