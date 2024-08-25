@@ -23,7 +23,7 @@ export default function FeatureWrapper({
 }: FeatureWrapperProps) {
   return (
     <div className="flex justify-center items-center gap-40">
-      <Card className="w-3/5">
+      <Card className="w-3/5 shadow-2xl">
         <CardHeader>
           <CardTitle className="flex justify-center">
             <Image src={imageSrc} alt={imageAlt} height={200} width={200} />
