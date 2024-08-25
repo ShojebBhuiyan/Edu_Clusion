@@ -7,7 +7,12 @@ export default function Navbar() {
   return (
     <nav className="px-10 flex justify-between items-center">
       <Link href={"/"}>
-        <Image src="/images/logo.png" width={200} height={200} alt={"logo"} />
+        <Image
+          src="/images/logo-no-bg.png"
+          width={200}
+          height={200}
+          alt={"logo"}
+        />
       </Link>
       <div className="flex gap-5 items-center">
         {navItems.map((item, idx) => (
@@ -16,7 +21,10 @@ export default function Navbar() {
               {item.label}
             </Link>
             {idx <= 2 && (
-              <div className="h-[30px] bg-black border border-black" />
+              <div
+                key={idx}
+                className="h-[30px] bg-black border border-black"
+              />
             )}
           </>
         ))}
@@ -28,7 +36,7 @@ export default function Navbar() {
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Braille Converter", href: "/braille" },
+  { label: "Sign Language Interpreter", href: "/signlanguage" },
+  { label: "Flashcard Generator", href: "/flashcard" },
 ];
